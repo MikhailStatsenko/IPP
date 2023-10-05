@@ -1,0 +1,5 @@
+{
+  "/libraries/:libraryId/books": "/books?library_id=:libraryId",
+  "/authors/:authorId/books": "/books?author_id=:authorId"
+}
+

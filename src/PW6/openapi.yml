@@ -1,0 +1,108 @@
+openapi: 3.0.0
+info:
+  title: Notes API
+  version: 1.0.0
+paths:
+  /notes:
+    get:
+      summary: Get list of all notes
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Note'
+        '204':
+          description: No content
+  /note:
+    get:
+      summary: Get note by ID
+      parameters:
+        - name: id
+          in: query
+          description: ID of the note
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NoteDTO'
+        '404':
+          description: Note not found
+  /add-note:
+    post:
+      summary: Add new note
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Note'
+      responses:
+        '200':
+          description: Successful response
+  /update-note:
+    patch:
+      summary: Update note by ID
+      parameters:
+        - name: id
+          in: query
+          description: ID of the note
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Note'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NoteDTO'
+        '404':
+          description: Note not found
+  /delete-note:
+    delete:
+      summary: Delete note by ID
+      parameters:
+        - name: id
+          in: query
+          description: ID of the note
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+        '404':
+          description: Note not found
+components:
+  schemas:
+    Note:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        content:
+          type: string
+    NoteDTO:
+      type: object
+      properties:
+        title:
+          type: string
+        content:
+          type: string

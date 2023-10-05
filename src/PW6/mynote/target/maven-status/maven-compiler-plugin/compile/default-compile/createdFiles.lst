@@ -1,0 +1,6 @@
+com/pw6/mynote/Note.class
+com/pw6/mynote/NoteService.class
+com/pw6/mynote/NoteRepository.class
+com/pw6/mynote/NoteDTO.class
+com/pw6/mynote/NoteController.class
+com/pw6/mynote/MyNoteApplication.class

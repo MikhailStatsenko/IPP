@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>MyNote</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav id="header">
+      <h1 id="mainHeader">Все заметки</h1>
+
+      <div class="nav-add-note">
+        <form id="noteForm">
+          <input type="text" id="noteTitle" placeholder="Название заметки" />
+          <button id="addBtn" type="submit">Добавить</button>
+        </form>
+      </div>
+    </nav>
+
+    <ul id="noteList"></ul>
+
+    <div id="noteDetails" style="display: none">
+      <h2 id="addNoteTitle">Заголовок заметки</h2>
+      <div id="editWorkArea">
+        <textarea id="addNoteContent"></textarea>
+        <div id="controlPanel">
+          <button id="backButton" onclick="goBack()">Назад</button>
+          <button id="saveButton" onclick="saveNote()">Сохранить</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="confirmationModal" class="modal">
+      <div class="modal-content">
+        <p>Удалить?</p>
+        <div id="deleteConfirmButtonsBlock">
+          <button id="confirmDeleteButton">Да</button>
+          <button id="cancelDeleteButton">Отмена</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="notificationContainer"></div>
+
+    <script src="deleteNote.js"></script>
+    <script src="openNote.js"></script>
+    <script src="main.js"></script>
+    <script src="addNote.js"></script>
+  </body>
+</html>
+

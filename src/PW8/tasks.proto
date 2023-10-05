@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+service TaskService {
+  rpc GetAll (Empty) returns (TaskList) {}
+  rpc Get (TaskRequestId) returns (Task) {}
+  rpc Insert (Task) returns (Task) {}
+  rpc Update (Task) returns (Task) {}
+  rpc Remove (TaskRequestId) returns (Empty) {}
+}
+
+message Empty {}
+
+message Task {
+  string id = 1;
+  string title = 2;
+  string time = 3;
+}
+
+message TaskList {
+  repeated Task tasks = 1;
+}
+
+message TaskRequestId {
+  string id = 1;
+}
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Управление контактами</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Контакты</h1>
+
+<form id="addContactForm">
+  <div>
+    <label for="name">Имя:</label>
+    <input type="text" id="name" placeholder="Иван" required>
+  </div>
+  <div>
+    <label for="phoneNumber">Номер телефона:</label>
+    <input type="text" id="phoneNumber" placeholder="89991234567" required pattern="^(\+7|8)[0-9]{10}$">
+  </div>
+  <button type="submit">Добавить контакт</button>
+</form>
+
+<div id="contactsList">
+</div>
+<script src="script.js"></script>
+</body>
+</html>
